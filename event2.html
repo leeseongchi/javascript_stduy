@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="text-input" placeholder="username">
+    <input type="text" class="text-input" placeholder="password">
+    <input type="text" class="text-input" placeholder="name">
+    <input type="text" class="text-input" placeholder="email">
+
+    <ul>
+        <li class="preview-datas">username</li>
+        <li class="preview-datas">password</li>
+        <li class="preview-datas">name</li>
+        <li class="preview-datas">email</li>
+    </ul>
+
+    <script>
+        // const textinputs = document.querySelectorAll(".text-input");
+        // for(let i = 0; i < textinputs.length - 1; i++) {
+        //     textinputs[i].onkeyup = (e) => {
+        //         console.log(e.keyCode)
+        //         if(e.keyCode === 13 && textinputs[textinputs.length-1]){
+        //             textinputs[i+1].focus();
+        //         }
+        //         else if(e.keyCode === 13 && textinputs[textinputs.length]){
+        //             for(let j = 0; j < textinputs.length; j++){
+        //                 const previews = document.querySelectorAll(".preview-datas");
+        //                 previews[j].innerHTML = e.target.value;
+        //             }
+        //         }
+        //     }
+        // }
+
+        const textinputs = document.querySelectorAll(".text-input");
+        for(let i = 0; i < textinputs.length - 1; i++) {
+            textinputs[i].onkeyup = (e) => {
+                 console.log(e.keyCode);
+                 if(e.keyCode === 13){
+                    textinputs[i+1].focus();
+                 }
+            }
+        }
+
+        textinputs[3].onkeyup = (e) => {
+            if(e.keyCode === 13){
+                for(let i = 0; i < textinputs.length; i++){
+                    if(textinputs[i].value.length === 0) {
+                        textinputs[i].focus();
+                        return;
+                    }
+                }
+                const previews = document.querySelectorAll(".preview-datas");
+                for(let j = 0; j < textinputs.length; j++){
+                    previews[j].innerHTML = textinputs[j].value;
+                }
+            }
+        }
+       
+
+    </script>
+</body>
+</html>
