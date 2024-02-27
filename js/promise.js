@@ -22,7 +22,6 @@ function gugudan(index, time, name) {
                 // complete = complete.map((value, cIndex) => cIndex !== index ? value : true);
                 resolve(true);
             }, time * 1000);
-        
     });
 
     return p;
