@@ -11,6 +11,7 @@ function main() {
 
     }).then((num) => {
         console.log("then실행");
+        console.log(num);
     });
     console.log(3);
 }

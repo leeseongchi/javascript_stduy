@@ -8,4 +8,7 @@ function main() {
         new Promise((resolve, reject) => setTimeout(() => resolve(3), 1000))
     ];
 
+    Promise.all(promises).then((result) => {
+        console.log(result);
+    })
 }
